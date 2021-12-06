@@ -1,6 +1,6 @@
 {% set name = "multiset" %}
-{% set version = "2.1.1" %}
-{% set sha256 = "4801569c08bfcecfe7b0927b17f079c90f8607aca8fecaf42ded92b737162bc7" %}
+{% set version = "3.0.1" %}
+{% set sha256 = "e45671cae8385a8e6248a9b07a3a83280c2d0cc4312713058cfbacdc5ec9973e" %}
 
 package:
   name: {{ name|lower }}
@@ -14,10 +14,10 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
     - setuptools
