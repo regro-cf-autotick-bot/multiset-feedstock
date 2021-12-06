@@ -1,35 +1,36 @@
 {% set name = "multiset" %}
 {% set version = "3.0.1" %}
-{% set sha256 = "e45671cae8385a8e6248a9b07a3a83280c2d0cc4312713058cfbacdc5ec9973e" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/multiset-{{ version }}.tar.gz
+  sha256: e45671cae8385a8e6248a9b07a3a83280c2d0cc4312713058cfbacdc5ec9973e
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
-    - setuptools
-    - setuptools_scm
-    - pytest
-    - pytest-runner
+    - setuptools >=46
+    - setuptools-scm
   run:
-    - python
+    - python >=3.7
 
 test:
   imports:
     - multiset
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/wheerd/multiset
