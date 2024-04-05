@@ -1,5 +1,5 @@
 {% set name = "multiset" %}
-{% set version = "3.0.1" %}
+{% set version = "3.1.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/multiset-{{ version }}.tar.gz
-  sha256: e45671cae8385a8e6248a9b07a3a83280c2d0cc4312713058cfbacdc5ec9973e
+  sha256: 8e93e586f688d2e2b00fa5843e2a82f69e971e1ac7ad3d78f9d2a47608de9ba6
 
 build:
   number: 0
